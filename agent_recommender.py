@@ -5,9 +5,12 @@ import time
 from langchain.agents import create_react_agent, AgentExecutor
 from langchain_core.tools import Tool
 from langchain_community.tools import DuckDuckGoSearchRun
+from duckduckgo_search.exceptions import DuckDuckGoSearchException  # needed if used inside safe_search.py
+from safe_search import SmartSearchTool  # your custom retry wrapper
 from langchain_openai import ChatOpenAI
 from langchain import hub
 from config import OPENAI_API_KEY
+
 
 # ✅ Check API key
 if not OPENAI_API_KEY:
@@ -26,10 +29,10 @@ class SafeSearchTool:
         self.search_tool = search_tool
 
     def run(self, query):
-        time.sleep(2)  # delay to avoid rate-limit
+        time.sleep(3)  # delay to avoid rate-limit
         return self.search_tool.run(query)
 
-safe_search_tool = SafeSearchTool(DuckDuckGoSearchRun())
+safe_search_tool = SmartSearchTool()
 
 tools = [
     Tool(
