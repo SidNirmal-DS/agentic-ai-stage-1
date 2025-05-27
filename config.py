@@ -1,4 +1,5 @@
-from dotenv import load_dotenv
 import os
-load_dotenv()
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+
+# Use Streamlit secrets in cloud, fallback to environment variable locally
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY") or \
+                 __import__("streamlit").secrets["OPENAI_API_KEY"]
