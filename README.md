@@ -93,7 +93,7 @@ Returns:
 ⸻
 
 Notes
-	•	Make sure your .env file is correctly configured
+	•	Make sure .env file is correctly configured
 	•	DuckDuckGo Search may occasionally hit rate limits (a 2-second delay has been added)
 	•	LangChain hub is used to fetch prompt template (react-chat)
 
@@ -101,7 +101,7 @@ Notes
 
 Next Steps
 
-We will continue with Stage 2:
+Continue Stage 2 for further processing:
 	•	Add multi-agent setup (Professor Agent + Search Agent)
 	•	Use of TMDB API for movie posters
 	•	Structured UI output for streaming recommendations
