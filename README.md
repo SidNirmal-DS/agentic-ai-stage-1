@@ -1,4 +1,4 @@
-# agentic-ai-stage-1
+# agentic-ai-stage-1 - Movie Recommendation
 
 Movie Recommender Agent (Stage 1)
 
